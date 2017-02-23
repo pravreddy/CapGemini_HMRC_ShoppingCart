@@ -1,6 +1,6 @@
 package uk.hmrc.checkout.system.service
 
-import uk.hmrc.checkout.system.domain.Product
+import uk.hmrc.checkout.system.domain.{Offer, Product}
 import uk.hmrc.checkout.system.service.InMemoryProductListService.products
 
 
@@ -16,13 +16,14 @@ trait ProductListService {
     None
   }
 }
+
 /**
  * In Memory Product List Service companion object to provide in-memory static data
  */
 object InMemoryProductListService {
   private val products = Map (
-    "APPLE" -> new Product("Apple", 0.60),
-    "ORANGE" -> new Product("Orange", 0.25)
+    "APPLE" -> new Product("Apple", 0.60, new Offer(2, 1)),
+    "ORANGE" -> new Product("Orange", 0.25, new Offer(3, 2))
   )
 }
 

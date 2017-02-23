@@ -28,11 +28,12 @@ class CheckOutSystemService (input : Array[String]) extends ProductListService {
       products + (product -> (1 + products.getOrElse(product,0)))
   }
 
+
   /**
    * Calculates basket total as per products offers
    */
   lazy val total = groupByProducts.foldLeft(0.0) {
-    (total, items) => total + (items._1.price.toDouble * items._2)
+    (total, items) => total + (items._1.price.toDouble * ((items._2 % items._1.offer.getQty) +
+      (items._2 / items._1.offer.getQty * items._1.offer.forPriceOfQty)))
   }
-
 }

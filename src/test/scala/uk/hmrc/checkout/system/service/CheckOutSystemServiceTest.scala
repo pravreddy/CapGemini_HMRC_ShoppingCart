@@ -16,7 +16,12 @@ class CheckOutSystemServiceTest extends FunSuite {
   }
 
   test("testTotalItemsPrices") {
-    val checkoutSystemTest = new CheckOutSystemService(Array("apple", "apple","orange","apple" )) with InMemoryProductListService
-    assert(checkoutSystemTest.total == 2.05)
+    var checkoutSystemTest = new CheckOutSystemService(Array("apple", "apple","orange","apple" )) with InMemoryProductListService
+    assert(checkoutSystemTest.total == 1.45)
+    checkoutSystemTest = new CheckOutSystemService(Array("orange", "orange")) with InMemoryProductListService
+    assert(checkoutSystemTest.total == 0.5)
+    checkoutSystemTest = new CheckOutSystemService(Array("orange", "orange", "orange")) with InMemoryProductListService
+    assert(checkoutSystemTest.total == 0.5)
   }
 }
+

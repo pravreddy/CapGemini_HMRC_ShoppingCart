@@ -1,6 +1,7 @@
 ShoppingCart
 ============
 Continuous Integration (CI) : [![Build Status](https://travis-ci.org/pravreddy/CapGemini_HMRC_ShoppingCart.svg)](https://travis-ci.org/pravreddy/CapGemini_HMRC_ShoppingCart)
+
 Code Coverage : [![codecov](https://codecov.io/gh/pravreddy/CapGemini_HMRC_ShoppingCart/branch/master/graph/badge.svg)](https://codecov.io/gh/pravreddy/CapGemini_HMRC_ShoppingCart)
 
 Step 1: Shopping Cart

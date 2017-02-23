@@ -11,6 +11,13 @@ import uk.hmrc.checkout.system.domain.Product
  * @param id Product Id
  * @param price Product Price
  */
-case class Product(id : String, price : BigDecimal) {
+case class Product(id : String, price : BigDecimal , offer: Offer) {
   override def toString = id
 }
+
+/**
+ * Product Offer Domain Object
+ * @param getQty Get product items qty
+ * @param forPriceOfQty For the price of qty
+ */
+case class Offer(getQty: Int, forPriceOfQty: Int)

@@ -1,11 +1,8 @@
 language: scala
 jdk: oraclejdk8
 scala:
-   - 2.9.3
-   - 2.10.4
    - 2.11.8
-   - 2.12.1
-  
+
 sudo: false
 
 # Build only master and version tags
@@ -24,7 +21,7 @@ cache:
     - $HOME/.ivy2/cache
 
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION sbt clean coverage test coverageReport
+  - sbt coverage test coverageReport coverageAggregate
   
 after_success:
   - bash <(curl -s https://codecov.io/bash)

@@ -14,7 +14,6 @@ branches:
     - master
     - /^v[0-9]/
 
-	
 before_cache:
   - find $HOME/.sbt -name "*.lock" | xargs rm
   - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
